@@ -64,9 +64,9 @@ export function SiteHeader() {
               </div>
             )}
           </div>
-          <a href={`${links.sender}/browse`} className="rounded-xl bg-plum-600 px-4 py-2.5 text-[13px] font-semibold text-white shadow-sm hover:bg-plum-700">
+          <Link href="/marketplace" className="rounded-xl bg-plum-600 px-4 py-2.5 text-[13px] font-semibold text-white shadow-sm hover:bg-plum-700">
             Marketplace
-          </a>
+          </Link>
           <button type="button" onClick={() => setMobile((m) => !m)} aria-expanded={mobile} aria-label={mobile ? "Close menu" : "Open menu"} className="rounded-xl p-2 text-ink-900 hover:bg-ink-50 min-[1120px]:hidden">
             {mobile ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>

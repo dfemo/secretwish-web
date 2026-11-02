@@ -43,7 +43,7 @@ export default function ServicesPage() {
             <li key={n} className="inline-flex items-center gap-2 rounded-2xl border border-ink-200 bg-white px-5 py-3 text-sm font-semibold text-ink-700"><span className="text-xl" aria-hidden>{e}</span>{n}</li>
           ))}
         </ul>
-        <p className="mt-10 text-center"><SecondaryLink href={`${links.sender}/browse`} external><Store className="size-4" aria-hidden /> Browse the marketplace</SecondaryLink></p>
+        <p className="mt-10 text-center"><SecondaryLink href="/marketplace"><Store className="size-4" aria-hidden /> Browse the marketplace</SecondaryLink></p>
       </Section>
       <CtaBand />
     </>
