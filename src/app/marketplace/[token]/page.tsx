@@ -67,7 +67,7 @@ export default function PublicWishlistPage() {
                     // eslint-disable-next-line @next/next/no-img-element
                     <img src={w.imageUrl} alt="" referrerPolicy="no-referrer" className="size-14 shrink-0 rounded-xl object-cover" />
                   ) : (
-                    <ProductArt emoji={w.kind === "Cash" ? "💸" : (w.product?.emoji ?? "🎁")} tint={w.kind === "Cash" ? "sage" : (w.product?.tint ?? "lavender")} size="sm" />
+                    <ProductArt emoji={w.kind === "Cash" ? "💸" : (w.product?.emoji ?? "🎁")} tint={w.kind === "Cash" ? "sage" : (w.product?.tint ?? "lavender")} src={w.product?.image} size="sm" />
                   )}
                   <div className="min-w-0 flex-1">
                     <p className="font-semibold text-ink-900">{w.kind === "Cash" ? "Cash gift" : w.name}{w.quantity > 1 && ` ×${w.quantity}`}</p>

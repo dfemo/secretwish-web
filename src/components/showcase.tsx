@@ -8,7 +8,7 @@ import { links } from "@/lib/site";
 
 type Showcase = {
   categories: { id: string; name: string; emoji: string; products: number }[];
-  featured: { id: string; name: string; emoji: string; tint: string; priceUsd: number; rating: number; category: string; vendor: string; city: string }[];
+  featured: { id: string; name: string; emoji: string; tint: string; image?: string | null; priceUsd: number; rating: number; category: string; vendor: string; city: string }[];
   stats: { vendors: number; gifts: number; cities: number };
 };
 
@@ -23,7 +23,7 @@ export function FeaturedGifts() {
         {data?.featured.map((p) => (
           <li key={p.id}>
             <a href={`${links.sender}/products/${p.id}`} className="group block">
-              <ProductArt emoji={p.emoji} tint={p.tint} size="lg" className="transition-transform group-hover:-translate-y-1" label={p.name} />
+              <ProductArt emoji={p.emoji} tint={p.tint} src={p.image} size="lg" className="transition-transform group-hover:-translate-y-1" label={p.name} />
               <p className="mt-3 line-clamp-1 text-sm font-semibold text-ink-900 group-hover:text-plum-600">{p.name}</p>
               <p className="text-xs text-ink-500">{p.vendor} · {p.city}</p>
               <p className="mt-1 flex items-center justify-between text-sm">

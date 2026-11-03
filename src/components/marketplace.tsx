@@ -27,7 +27,7 @@ export function closureTitle(c: Closure, firstName: string) {
 export type Wish = {
   id: string; kind: "Catalog" | "Custom" | "Cash"; name: string; notes: string; quantity: number; fulfilled: boolean; category: string;
   url: string | null; imageUrl: string | null; estimatedPriceUsd: number | null; cashAmountUsd: number | null;
-  product: { id: string; name: string; priceUsd: number; emoji: string; tint: string; available: boolean; vendor: string } | null;
+  product: { id: string; name: string; priceUsd: number; emoji: string; tint: string; image?: string | null; available: boolean; vendor: string } | null;
 };
 export type PublicWishlist = {
   title: string; description: string; occasion: string | null; eventDate: string | null; visibility: string; currency: string; token: string;
