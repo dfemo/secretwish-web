@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { ArrowLeft, CalendarDays, CheckCircle2, ExternalLink, Gift, LogIn, MapPin } from "lucide-react";
+import { ArrowLeft, CalendarDays, CheckCircle2, ExternalLink, Gift, Heart, Lock, LogIn, MapPin } from "lucide-react";
 import { useApi } from "@/shared/lib/api";
 import { date } from "@/shared/lib/format";
 import { EmptyState, ErrorState, ProductArt, Skeleton } from "@/shared/ui/primitives";
-import { giftedTimes, giftLink, useRates, wishPrice, type PublicWishlist } from "@/components/marketplace";
+import { closureTitle, giftedTimes, giftLink, useRates, wishPrice, type PublicWishlist } from "@/components/marketplace";
 
-/** One open wishlist, viewable without an account. "Gift this" opens the sender app, which asks you to sign in at that point. */
+/** One wishlist, viewable without an account. "Gift this" opens the sender app, which asks you to sign in at that point. A closed list
+ * shows how it ended (the owner's thank-you or reason, where they shared it) and can't be gifted from. */
 export default function PublicWishlistPage() {
   const { token } = useParams<{ token: string }>();
   const { data, error, loading, reload } = useApi<PublicWishlist>(`/public/wishlists/${token}`);
@@ -36,17 +37,32 @@ export default function PublicWishlistPage() {
               )}
             </p>
             {data.description && <p className="mt-4 max-w-2xl text-sm text-plum-100">{data.description}</p>}
-            <a href={giftLink(data.token)} className="mt-6 inline-flex items-center gap-2 rounded-xl bg-gold-400 px-5 py-3 text-sm font-semibold text-plum-950 hover:bg-gold-500">
-              <LogIn className="size-4" aria-hidden /> Sign in to gift from this list
-            </a>
-            <p className="mt-2 text-xs text-plum-300">Gifts are delivered privately. {data.owner.firstName} never sees your details unless you choose to reveal them.</p>
+            {data.closed ? (
+              <div className="mt-6 rounded-2xl bg-white/10 p-5">
+                <p className="flex items-center gap-2 font-semibold text-gold-300">
+                  {data.closure?.kind === "Thanks" ? <Heart className="size-4" aria-hidden /> : <Lock className="size-4" aria-hidden />}
+                  {data.closure ? closureTitle(data.closure, data.owner.firstName) : "This wishlist is closed"}
+                </p>
+                {data.closure?.note && <p className="mt-2 font-display text-lg text-ivory-50 italic">“{data.closure.note}”</p>}
+                <p className="mt-2 text-xs text-plum-300">
+                  {data.closure && `Closed ${date(data.closure.at)}. `}It can&apos;t receive more gifts.
+                </p>
+              </div>
+            ) : (
+              <>
+                <a href={giftLink(data.token)} className="mt-6 inline-flex items-center gap-2 rounded-xl bg-gold-400 px-5 py-3 text-sm font-semibold text-plum-950 hover:bg-gold-500">
+                  <LogIn className="size-4" aria-hidden /> Sign in to gift from this list
+                </a>
+                <p className="mt-2 text-xs text-plum-300">Gifts are delivered privately. {data.owner.firstName} never sees your details unless you choose to reveal them.</p>
+              </>
+            )}
           </header>
 
           <ul className="mt-6 space-y-3">
             {data.items.map((w) => {
               const price = wishPrice(w, data.currency, rate);
               return (
-                <li key={w.id} className={`flex items-center gap-4 rounded-2xl border border-ink-200 bg-white p-4 ${w.fulfilled ? "opacity-60" : ""}`}>
+                <li key={w.id} className={`flex items-center gap-4 rounded-2xl border border-ink-200 bg-white p-4 ${w.fulfilled || data.closed ? "opacity-60" : ""}`}>
                   {w.kind === "Custom" && w.imageUrl ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img src={w.imageUrl} alt="" referrerPolicy="no-referrer" className="size-14 shrink-0 rounded-xl object-cover" />
@@ -69,6 +85,8 @@ export default function PublicWishlistPage() {
                     {price && <p className="text-sm font-bold tabular">{price}</p>}
                     {w.fulfilled ? (
                       <p className="mt-1 inline-flex items-center gap-1 text-xs font-semibold text-success-700"><CheckCircle2 className="size-3.5" aria-hidden /> Gifted</p>
+                    ) : data.closed ? (
+                      <p className="mt-1 text-xs text-ink-400">List closed</p>
                     ) : (
                       <a href={giftLink(data.token)} className="mt-1 inline-block rounded-lg bg-plum-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-plum-700">Gift this</a>
                     )}
