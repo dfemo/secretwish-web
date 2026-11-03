@@ -6,7 +6,7 @@ import { ArrowLeft, CalendarDays, CheckCircle2, ExternalLink, Gift, LogIn, MapPi
 import { useApi } from "@/shared/lib/api";
 import { date } from "@/shared/lib/format";
 import { EmptyState, ErrorState, ProductArt, Skeleton } from "@/shared/ui/primitives";
-import { giftLink, useRates, wishPrice, type PublicWishlist } from "@/components/marketplace";
+import { giftedTimes, giftLink, useRates, wishPrice, type PublicWishlist } from "@/components/marketplace";
 
 /** One open wishlist, viewable without an account. "Gift this" opens the sender app, which asks you to sign in at that point. */
 export default function PublicWishlistPage() {
@@ -29,6 +29,11 @@ export default function PublicWishlistPage() {
             <p className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-plum-200">
               <span className="inline-flex items-center gap-1"><MapPin className="size-4" aria-hidden /> {data.owner.firstName} · {data.owner.city}</span>
               {data.eventDate && <span className="inline-flex items-center gap-1"><CalendarDays className="size-4" aria-hidden /> {date(data.eventDate)}</span>}
+              {data.gifts > 0 && (
+                <span className="rounded-full bg-gold-400/20 px-2.5 py-0.5 text-xs font-semibold text-gold-300">
+                  {giftedTimes(data.gifts)}{data.cashGifts > 0 && ` · ${data.cashGifts === data.gifts ? "all cash" : `${data.cashGifts} in cash`}`}
+                </span>
+              )}
             </p>
             {data.description && <p className="mt-4 max-w-2xl text-sm text-plum-100">{data.description}</p>}
             <a href={giftLink(data.token)} className="mt-6 inline-flex items-center gap-2 rounded-xl bg-gold-400 px-5 py-3 text-sm font-semibold text-plum-950 hover:bg-gold-500">

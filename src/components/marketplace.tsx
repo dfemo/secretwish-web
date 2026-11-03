@@ -12,6 +12,8 @@ import { links } from "@/lib/site";
 type Card = {
   title: string; description: string; occasion: string | null; eventDate: string | null; currency: string; token: string; createdAt: string;
   owner: { firstName: string; city: string }; wishes: number; open: number; preview: { name: string; emoji: string }[];
+  /** Gifts received (orders and cash, including cash for the list as a whole). Counts only. */
+  gifts: number;
 };
 
 export type Wish = {
@@ -22,7 +24,12 @@ export type Wish = {
 export type PublicWishlist = {
   title: string; description: string; occasion: string | null; eventDate: string | null; visibility: string; currency: string; token: string;
   owner: { firstName: string; city: string }; items: Wish[];
+  /** Gifts received, and how many were cash. Counts only: amounts and gifters stay private. */
+  gifts: number; cashGifts: number; closed: boolean;
 };
+
+/** "Gifted once" / "Gifted 3 times". */
+export const giftedTimes = (n: number) => (n === 1 ? "Gifted once" : `Gifted ${n} times`);
 
 const occasions = ["Birthday", "Wedding", "Anniversary", "Graduation", "Baby shower", "Housewarming", "Valentine's", "Christmas", "Just because"];
 
@@ -68,7 +75,8 @@ export function Marketplace() {
                 ))}
               </ul>
               <p className="mt-auto pt-5 text-xs font-semibold text-ink-700">
-                {w.open} of {w.wishes} wish{w.wishes === 1 ? "" : "es"} still open · <span className="text-plum-600">View list →</span>
+                {w.wishes === 0 ? "Open to cash gifts" : `${w.open} of ${w.wishes} wish${w.wishes === 1 ? "" : "es"} still open`}
+                {w.gifts > 0 && ` · ${giftedTimes(w.gifts)}`} · <span className="text-plum-600">View list →</span>
               </p>
             </Link>
           </li>
