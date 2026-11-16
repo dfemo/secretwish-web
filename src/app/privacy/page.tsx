@@ -4,7 +4,7 @@ import { Accent, PageHero } from "@/components/blocks";
 export const metadata: Metadata = { title: "Privacy", description: "How SecretWish protects senders, recipients and the surprise." };
 
 const sections = [
-  ["What we collect", "Your name, email and phone; delivery addresses you give us; wishlists you create; orders and messages. Payment card details are handled by our payment provider and never reach SecretWish."],
+  ["What we collect", "Your name, email, phone and date of birth (SecretWish is for adults 18 and over, and we use it for your birthday wishlist); delivery addresses you give us; wishlists you create; orders and messages. Payment card details are handled by our payment provider and never reach SecretWish."],
   ["Who sees what", "Senders see a recipient's first name and city — never their address. Vendors see what they need to deliver — never the sender. Recipients see nothing about a gift until it arrives, and the sender only if they opt in. Our support staff see masked details by default and must record a reason to view more."],
   ["Your choices", "Wishlists are private unless you choose otherwise; public discovery needs your explicit confirmation. You can rotate share links, turn on discreet notifications and opt out of marketing at any time."],
   ["Security", "Verification codes are stored only as salted hashes, expire, are single-use and lock after repeated wrong attempts. Sensitive staff actions are recorded in an audit log."],
