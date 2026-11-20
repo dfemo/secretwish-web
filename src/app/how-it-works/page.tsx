@@ -3,7 +3,7 @@ import { Gift, ListChecks, Store } from "lucide-react";
 import { Accent, CtaBand, PageHero, PrimaryLink, Section } from "@/components/blocks";
 import { links } from "@/lib/site";
 
-export const metadata: Metadata = { title: "How it Works", description: "How SecretWish works for senders, recipients and vendors." };
+export const metadata: Metadata = { title: "How it Works", description: "How VeilWish (SecretWish) works for senders, recipients and vendors." };
 
 const journeys = [
   {
@@ -53,7 +53,7 @@ const journeys = [
 export default function HowItWorksPage() {
   return (
     <>
-      <PageHero eyebrow="How it works" title={<>Simple for everyone. <Accent>Secret</Accent> where it matters.</>} intro="SecretWish connects the people who wish, the people who give and the vendors who make it happen — with privacy and accountability at every step.">
+      <PageHero eyebrow="How it works" title={<>Simple for everyone. <Accent>Secret</Accent> where it matters.</>} intro="VeilWish (SecretWish) connects the people who wish, the people who give and the vendors who make it happen — with privacy and accountability at every step.">
         {journeys.map((j) => (
           <a key={j.id} href={`#${j.id}`} className="rounded-full border border-ink-200 bg-white px-4 py-2 text-sm font-semibold text-ink-700 hover:border-plum-300 hover:text-plum-600">
             {j.who}

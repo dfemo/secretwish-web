@@ -55,7 +55,7 @@ export function LiveStats() {
     { value: data ? `${data.stats.vendors}` : "—", label: "Approved vendors" },
     { value: data ? `${data.stats.gifts}` : "—", label: "Gifts to choose from" },
     { value: data ? `${data.stats.cities}` : "—", label: "Cities served" },
-    { value: "$100", label: "First gift, no SecretWish fee" },
+    { value: "$100", label: "First gift, no VeilWish (SecretWish) fee" },
   ];
   return (
     <div className="mx-auto max-w-5xl px-4">

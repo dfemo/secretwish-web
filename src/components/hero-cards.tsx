@@ -43,7 +43,7 @@ export function HeroCards() {
         <svg className="absolute inset-0 h-full w-full opacity-25" viewBox="0 0 200 300" preserveAspectRatio="none">
           <path d="M0 0 L100 60 L0 120 Z M200 0 L100 60 L200 120 Z M0 120 L100 180 L0 240 Z M200 120 L100 180 L200 240 Z M100 60 L200 120 L100 180 L0 120 Z" fill="#9c7ab0" />
         </svg>
-        <p className="relative text-right text-lg font-semibold text-white/80">SecretWish</p>
+        <p className="relative text-right text-lg font-semibold text-white/80">VeilWish (SecretWish)</p>
         <div className="relative mt-10 grid place-items-center text-center md:mt-16">
           <span className="grid size-16 place-items-center rounded-2xl bg-white/15 text-4xl backdrop-blur">🎁</span>
           <p className="mt-4 text-sm font-semibold">A surprise is on its way</p>

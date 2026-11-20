@@ -36,7 +36,7 @@ export function SiteHeader() {
         Skip to content
       </a>
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-4 rounded-2xl border border-ink-200/70 bg-white/90 px-4 shadow-[0_6px_30px_rgb(43_23_54/0.06)] backdrop-blur">
-        <Link href="/" className="text-plum-900" aria-label="SecretWish home">
+        <Link href="/" className="text-plum-900" aria-label="VeilWish (SecretWish) home">
           <Logo />
         </Link>
         <nav aria-label="Main" className="mx-auto hidden items-center gap-1 min-[1120px]:flex">

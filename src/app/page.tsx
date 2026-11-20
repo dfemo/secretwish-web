@@ -81,7 +81,7 @@ export default function HomePage() {
           <div>
             <p className="text-xs font-bold tracking-[0.16em] text-plum-500 uppercase">Privacy by design</p>
             <h2 id="privacy-h" className="mt-2 text-3xl leading-tight font-bold tracking-tight text-ink-900 md:text-[40px]">The surprise stays a <Accent>surprise</Accent></h2>
-            <p className="mt-4 text-[17px] text-ink-500">Surprise gifting only works if it&apos;s discreet. Privacy isn&apos;t a setting at SecretWish — it&apos;s how the whole platform is built.</p>
+            <p className="mt-4 text-[17px] text-ink-500">Surprise gifting only works if it&apos;s discreet. Privacy isn&apos;t a setting at VeilWish (SecretWish) — it&apos;s how the whole platform is built.</p>
             <div className="mt-8">
               <SecondaryLink href="/privacy">How we protect you</SecondaryLink>
             </div>
@@ -124,7 +124,7 @@ export default function HomePage() {
             { q: "Will the recipient know who sent the gift?", a: "Only if you choose. By default the card says “from a secret admirer”. You can opt to reveal your name after delivery." },
             { q: "Can I see my friend's address?", a: "No. When you gift from a wishlist, we deliver to the owner's saved address. You only see their first name and city." },
             { q: "What is the secret code?", a: "Each gift comes with a single-use code on its card. The recipient enters it to confirm safe delivery — and that's what releases the vendor's payment." },
-            { q: "How much does it cost?", a: <>Registering is free, and your first gift up to $100 has no SecretWish fee. After that, a monthly or yearly plan applies. <Link className="font-semibold text-plum-600" href="/pricing">See pricing</Link>.</> },
+            { q: "How much does it cost?", a: <>Registering is free, and your first gift up to $100 has no VeilWish (SecretWish) fee. After that, a monthly or yearly plan applies. <Link className="font-semibold text-plum-600" href="/pricing">See pricing</Link>.</> },
             { q: "Which currency will I pay in?", a: "Prices are set in US dollars and shown in your local currency — naira in Nigeria — at the exchange rate recorded when you order." },
             { q: "What if something goes wrong?", a: "Our support team handles late deliveries, damaged gifts and refunds. Every case is reviewed with evidence and decided fairly." },
           ]}

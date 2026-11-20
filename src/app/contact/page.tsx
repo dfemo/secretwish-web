@@ -3,7 +3,7 @@ import { Accent, PageHero } from "@/components/blocks";
 import { ContactDetails } from "@/components/contact-details";
 import { ContactForm } from "@/components/contact-form";
 
-export const metadata: Metadata = { title: "Contact Us", description: "Questions about gifting, wishlists, selling on SecretWish or corporate gifting? Get in touch." };
+export const metadata: Metadata = { title: "Contact Us", description: "Questions about gifting, wishlists, selling on VeilWish (SecretWish) or corporate gifting? Get in touch." };
 
 export default function ContactPage() {
   return (

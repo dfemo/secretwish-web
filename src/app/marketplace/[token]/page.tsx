@@ -72,7 +72,7 @@ export default function PublicWishlistPage() {
                   <div className="min-w-0 flex-1">
                     <p className="font-semibold text-ink-900">{w.kind === "Cash" ? "Cash gift" : w.name}{w.quantity > 1 && ` ×${w.quantity}`}</p>
                     <p className="text-xs text-ink-500">
-                      {w.kind === "Catalog" && w.product ? `from ${w.product.vendor}` : w.kind === "Custom" ? "Sourced by a SecretWish vendor" : w.category}
+                      {w.kind === "Catalog" && w.product ? `from ${w.product.vendor}` : w.kind === "Custom" ? "Sourced by a VeilWish (SecretWish) vendor" : w.category}
                       {w.notes && ` · “${w.notes}”`}
                     </p>
                     {w.url && (

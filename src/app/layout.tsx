@@ -4,9 +4,9 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/blocks";
 
 export const metadata: Metadata = {
-  title: { default: "SecretWish — Wishlists & secret surprise gifts", template: "%s · SecretWish" },
-  description: "Share a wishlist or send a secret surprise from approved vendors. SecretWish keeps addresses private and the surprise a surprise.",
-  openGraph: { title: "SecretWish", description: "Wishlists and secret surprise gifts from approved vendors.", type: "website" },
+  title: { default: "VeilWish (SecretWish) — Wishlists & secret surprise gifts", template: "%s · VeilWish (SecretWish)" },
+  description: "Share a wishlist or send a secret surprise from approved vendors. VeilWish (SecretWish) keeps addresses private and the surprise a surprise.",
+  openGraph: { title: "VeilWish (SecretWish)", description: "Wishlists and secret surprise gifts from approved vendors.", type: "website" },
 };
 
 export const viewport: Viewport = { themeColor: "#ffffff", width: "device-width", initialScale: 1 };

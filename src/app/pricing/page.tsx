@@ -3,12 +3,12 @@ import { Accent, Faq, PageHero, Section } from "@/components/blocks";
 import { PricingPlans } from "@/components/pricing-plans";
 import { links } from "@/lib/site";
 
-export const metadata: Metadata = { title: "Pricing", description: "Free to join. Your first gift up to $100 has no SecretWish fee. Simple monthly or yearly plans after that, with a saving when you pay yearly." };
+export const metadata: Metadata = { title: "Pricing", description: "Free to join. Your first gift up to $100 has no VeilWish (SecretWish) fee. Simple monthly or yearly plans after that, with a saving when you pay yearly." };
 
 export default function PricingPage() {
   return (
     <>
-      <PageHero eyebrow="Pricing" title={<>Free to join. <Accent>Fair</Accent> when you grow.</>} intro="Registration is free for everyone. Your first gift — up to $100 — carries no SecretWish fee. Prices are set in US dollars and shown in your local currency (naira in Nigeria)." />
+      <PageHero eyebrow="Pricing" title={<>Free to join. <Accent>Fair</Accent> when you grow.</>} intro="Registration is free for everyone. Your first gift — up to $100 — carries no VeilWish (SecretWish) fee. Prices are set in US dollars and shown in your local currency (naira in Nigeria)." />
       <section aria-label="Plans for senders and wishlist owners" className="bg-[linear-gradient(135deg,#f3eef7_0%,#fbf6e8_100%)]">
         <div className="mx-auto max-w-6xl px-4 py-16 md:py-20">
           <h2 className="mb-2 text-center text-3xl font-bold tracking-tight text-ink-900 md:text-[40px]">For senders &amp; wishlist owners</h2>

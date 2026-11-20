@@ -17,7 +17,7 @@ const services = [
 export default function ServicesPage() {
   return (
     <>
-      <PageHero eyebrow="Services" title={<>Everything you need to <Accent>gift well</Accent></>} intro="From a carefully curated wishlist to a fully secret surprise, SecretWish handles the details — discovery, payment, discreet delivery, verification and support.">
+      <PageHero eyebrow="Services" title={<>Everything you need to <Accent>gift well</Accent></>} intro="From a carefully curated wishlist to a fully secret surprise, VeilWish (SecretWish) handles the details — discovery, payment, discreet delivery, verification and support.">
         <PrimaryLink href={links.sender} external>Start gifting</PrimaryLink>
         <SecondaryLink href="/contact">Talk to us</SecondaryLink>
       </PageHero>

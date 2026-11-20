@@ -50,7 +50,7 @@ export function CtaBand() {
         <div className="pointer-events-none absolute -top-20 -left-10 size-64 rounded-full bg-plum-500/40 blur-3xl" aria-hidden />
         <div className="pointer-events-none absolute -right-10 -bottom-24 size-72 rounded-full bg-gold-500/25 blur-3xl" aria-hidden />
         <h2 className="relative text-3xl font-bold tracking-tight md:text-4xl">Ready to make someone&apos;s day?</h2>
-        <p className="relative mx-auto mt-3 max-w-xl text-plum-100">Your first gift up to $100 has no SecretWish fee. Start a wishlist or send a surprise in minutes.</p>
+        <p className="relative mx-auto mt-3 max-w-xl text-plum-100">Your first gift up to $100 has no VeilWish (SecretWish) fee. Start a wishlist or send a surprise in minutes.</p>
         <div className="relative mt-8 flex flex-wrap justify-center gap-3">
           <a href={links.sender} className={`${btn} bg-white text-plum-800 hover:bg-plum-50`}>Send a gift</a>
           <a href={links.recipient} className={`${btn} border border-white/30 text-white hover:bg-white/10`}>Create a wishlist</a>
@@ -73,7 +73,7 @@ export function SiteFooter() {
         <FooterCol title="Apps" items={[{ href: links.sender, label: "Send a gift", external: true }, { href: links.recipient, label: "My wishlists", external: true }, { href: links.vendor, label: "Vendor portal", external: true }]} />
         <FooterCol title="Company" items={[{ href: "/privacy", label: "Privacy" }, { href: "/contact", label: "Contact" }, { href: "/vendors", label: "Become a vendor" }]} />
       </div>
-      <p className="border-t border-ink-100 py-5 text-center text-xs text-ink-400">© {new Date().getFullYear()} SecretWish. All rights reserved.</p>
+      <p className="border-t border-ink-100 py-5 text-center text-xs text-ink-400">© {new Date().getFullYear()} VeilWish (SecretWish). All rights reserved.</p>
     </footer>
   );
 }

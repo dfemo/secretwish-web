@@ -3,17 +3,17 @@ import { BadgeCheck, BarChart3, ClipboardCheck, HandCoins, ShieldCheck, Sparkles
 import { Accent, Faq, PageHero, PrimaryLink, SecondaryLink, Section } from "@/components/blocks";
 import { links } from "@/lib/site";
 
-export const metadata: Metadata = { title: "For Vendors", description: "Sell gifts on SecretWish: reach ready-to-gift customers, quote on surprises and get paid reliably." };
+export const metadata: Metadata = { title: "For Vendors", description: "Sell gifts on VeilWish (SecretWish): reach ready-to-gift customers, quote on surprises and get paid reliably." };
 
 export default function VendorsPage() {
   return (
     <>
-      <PageHero eyebrow="For vendors" title={<>Grow with customers who are <Accent>ready to gift</Accent></>} intro="SecretWish brings you senders with a clear occasion and a budget. You focus on beautiful gifts and on-time delivery; we handle discovery, payments and customer care.">
+      <PageHero eyebrow="For vendors" title={<>Grow with customers who are <Accent>ready to gift</Accent></>} intro="VeilWish (SecretWish) brings you senders with a clear occasion and a budget. You focus on beautiful gifts and on-time delivery; we handle discovery, payments and customer care.">
         <PrimaryLink href="/contact">Apply to sell</PrimaryLink>
         <SecondaryLink href={links.vendor} external>Vendor login</SecondaryLink>
       </PageHero>
 
-      <Section title={<>Why vendors choose <Accent>SecretWish</Accent></>} className="!pt-8">
+      <Section title={<>Why vendors choose <Accent>VeilWish (SecretWish)</Accent></>} className="!pt-8">
         <ul className="grid gap-5 md:grid-cols-3">
           {[
             { icon: Sparkles, title: "Demand with intent", body: "Wishlists tell you exactly what people want. Surprise requests come with a category, a story and a budget range." },
@@ -61,7 +61,7 @@ export default function VendorsPage() {
       <Section eyebrow="Vendor FAQ" title="Good to know" className="!pt-0">
         <Faq
           items={[
-            { q: "What does it cost to sell?", a: "Vendors subscribe monthly, or yearly at a reduced price, and SecretWish takes a commission on the product subtotal. Final price points will be published at launch." },
+            { q: "What does it cost to sell?", a: "Vendors subscribe monthly, or yearly at a reduced price, and VeilWish (SecretWish) takes a commission on the product subtotal. Final price points will be published at launch." },
             { q: "When do I get paid?", a: "Once an order is delivered with evidence (the recipient's code or courier proof), the hold period has passed and there's no open refund or dispute, it joins your next payout through the payment provider." },
             { q: "Will I see who sent the gift?", a: "No. You see what you need to fulfil — the items, card message, and the recipient's delivery details — never the sender's identity." },
             { q: "Can I decline an order?", a: "Yes, with a reason. Our operations team will refund the sender or offer an alternative. Declines affect your acceptance rate." },
